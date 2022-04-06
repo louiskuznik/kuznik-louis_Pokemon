@@ -1,7 +1,7 @@
-import TypeFeu from "./_TypeFeu";
-import Pokemon from "../Interfaces/_Pokemon";
+import TypePlante from "./_TypePlante";
+import Pokemon from "../_Interfaces/_Pokemon";
 
-export default class Salameche extends TypeFeu implements Pokemon {
+export default class Bulbizarre extends TypePlante implements Pokemon {
     _pvMax: number;
     _nom!: string;
     _pv: number;
@@ -13,52 +13,52 @@ export default class Salameche extends TypeFeu implements Pokemon {
         super(degats);
         this._pvMax = pvMax;
         this._pv = pvMax;
-        this._type = "feu";
+        this._type = "plante";
         this._captif = false;
         this._horsjeu = false;
-        this._nom = "salameche";
+        this._nom = "bulbizarre";
     }
 
     get pvMax() {
         return this._pvMax;
     }
     set pvMax(pvMax: number) {
-        this._pvMax = pvMax;  
+        this._pvMax = pvMax;
     }
 
     get pv() {
         return this._pv;
     }
     set pv(pv: number) {
-        this._pv = pv;  
+        this._pv = pv;
     }
 
     get nom() {
         return this._nom;
     }
     set nom(nom: string) {
-        this._nom = nom;  
+        this._nom = nom;
     }
 
     get type() {
         return this._type;
     }
     set type(type: string) {
-        this._type = type;  
+        this._type = type;
     }
 
     get captif() {
         return this._captif;
     }
     set captif(captif: boolean) {
-        this._captif = captif;  
+        this._captif = captif;
     }
 
     get horsjeu() {
         return this._horsjeu;
     }
     set horsjeu(horsjeu: boolean) {
-        this._horsjeu = horsjeu;  
+        this._horsjeu = horsjeu;
     }
 
     /**
@@ -66,7 +66,8 @@ export default class Salameche extends TypeFeu implements Pokemon {
      * @param cible 
      * @returns 
      */
-     attaquer(cible: Pokemon): string {
+    // On check s'il  est vivant d'abord puis on check le type de la cible puis ont attaque !
+    attaquer(cible: Pokemon): string {
         this.checkVivant();
         if (!this._horsjeu) {
             let degatsAttaque: number = 0;
@@ -95,12 +96,11 @@ export default class Salameche extends TypeFeu implements Pokemon {
 
     /**
      * 
-
      */
     // Si le pokemon n'a plus de PV, il ne peut plus attaquer
     // true = mort
     checkVivant(): void {
-        if(this._pv <= 0) {
+        if (this._pv <= 0) {
             this._horsjeu = true;
         }
     }
@@ -110,7 +110,7 @@ export default class Salameche extends TypeFeu implements Pokemon {
      */
     // Permet de restaurer les PV d'un pokemon
     soigner(): void {
-        if(this._pv != this._pvMax) {
+        if (this._pv != this._pvMax) {
             this._pv = this._pvMax;
         }
     }

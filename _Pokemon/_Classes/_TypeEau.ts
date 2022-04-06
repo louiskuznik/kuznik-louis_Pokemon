@@ -1,6 +1,6 @@
-import Type from '../Interfaces/_Type';
+import Type from '../_Interfaces/_Type';
 
-export default abstract class TypePlante implements Type {
+export default abstract class TypeEau implements Type {
     degats: number;
 
     constructor(_degats: number) {
@@ -12,14 +12,6 @@ export default abstract class TypePlante implements Type {
      * @returns 
      */
     calculerDegatsContreFeu(): number {
-        return this.degats * 0.5;
-    }
-
-    /**
-     * 
-     * @returns 
-     */
-    calculerDegatsContreEau(): number {
         return this.degats * 1.5;
     }
 
@@ -27,7 +19,15 @@ export default abstract class TypePlante implements Type {
      * 
      * @returns 
      */
-    calculerDegatsContrePlante(): number {
+    calculerDegatsContreEau(): number {
         return this.degats;
+    }
+
+    /**
+     * 
+     * @returns 
+     */
+    calculerDegatsContrePlante(): number {
+        return this.degats * 0.5;
     }
 }

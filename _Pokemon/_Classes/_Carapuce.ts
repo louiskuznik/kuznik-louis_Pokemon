@@ -1,5 +1,5 @@
 import TypeEau from "./_TypeEau";
-import Pokemon from "../Interfaces/_Pokemon";
+import Pokemon from "../_Interfaces/_Pokemon";
 
 export default class Carapuce extends TypeEau implements Pokemon {
     _pvMax: number;

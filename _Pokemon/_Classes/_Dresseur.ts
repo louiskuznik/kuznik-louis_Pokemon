@@ -1,5 +1,5 @@
 import Pokeball from "./_Pokeball";
-import Pokemon from "../Interfaces/_Pokemon";
+import Pokemon from "../_Interfaces/_Pokemon";
 
 export default class Dresseur {
     private _nom: string;

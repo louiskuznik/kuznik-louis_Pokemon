@@ -1,4 +1,4 @@
-import Type from '../Interfaces/_Type';
+import Type from '../_Interfaces/_Type';
 
 export default abstract class TypeFeu implements Type {
     degats: number;
